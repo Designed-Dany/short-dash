@@ -1,0 +1,19 @@
+.setting-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 75px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(250, 125, 125, 0.315);
+  cursor: pointer;
+}
+
+.setting-btn:hover {
+  background-color: rgba(245, 87, 87, 0.664);
+}
+
+.setting-btn:active {
+  background-color: rgba(243, 28, 28, 0.664);
+}
