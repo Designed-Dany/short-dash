@@ -1,11 +1,12 @@
 import React from "react";
 import "/src/scss/play.scss";
 import playImg from "./play-icon.png";
+import stopImg from "./stop-icon.png";
 
-function Play() {
+function Play({ isRunning, timerStart }) {
   return (
-    <button className="play-btn">
-      <img src={playImg} alt="" />
+    <button onClick={timerStart} className="play-btn">
+      {isRunning ? <img src={stopImg} /> : <img src={playImg} alt="" />}
     </button>
   );
 }
