@@ -8,6 +8,7 @@ function Time() {
   const [timeLeft, setTimeLeft] = useState(timerList[0]); // первый таймер
   const [isRunning, setIsRunning] = useState(false); // стоп или плэй таймера
   const [currentIndex, setCurrentIndex] = useState(0); // текущий индекс
+  const [isPause, setIsPause] = useState(false);
 
   const nextTimer = () => {
     setCurrentIndex((prevIndex) => {
@@ -41,6 +42,16 @@ function Time() {
     setIsRunning((prev) => !prev);
   };
 
+  const shortPause = () => {
+    setTimeLeft(300);
+    setIsPause(true);
+
+    if (isPause == true) {
+      setTimeLeft(timerList[currentIndex]);
+      setIsPause(false);
+    }
+  };
+
   return (
     <>
       <div className="timer">
@@ -50,7 +61,7 @@ function Time() {
           {seconds < 10 ? "0" : ""}
           {seconds}
         </div>
-        {timeLeft <= 0 && <p>Время истекло</p>}
+        {timeLeft <= 0 ? shortPause() : ""}
         <div className="timer__nav">
           <Setting />
           <Play isRunning={isRunning} timerStart={toggleTimer} />
