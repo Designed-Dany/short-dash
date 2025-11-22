@@ -3,8 +3,10 @@ import "/src/scss/time.scss";
 import Play from "../play-button";
 import Setting from "../setting-button";
 import Next from "../next-button";
+import Nav from "/src/components/nav/index";
+
 function Time() {
-  const timerList = [1500, 1800, 2100, 2400, 2700, 3000]; // массив таймеров
+  const timerList = [5, 1800, 2100, 2400, 2700, 3000]; // массив таймеров
   const [timeLeft, setTimeLeft] = useState(timerList[0]); // первый таймер
   const [isRunning, setIsRunning] = useState(false); // стоп или плэй таймера
   const [currentIndex, setCurrentIndex] = useState(0); // текущий индекс
@@ -43,7 +45,7 @@ function Time() {
   };
 
   const shortPause = () => {
-    setTimeLeft(300);
+    setTimeLeft(15);
     setIsPause(true);
 
     if (isPause == true) {
@@ -54,7 +56,8 @@ function Time() {
 
   return (
     <>
-      <div className="timer">
+      <Nav isPause={isPause} />
+      <div className={isPause ? "timer__break" : "timer"}>
         <div className="minutes">
           {minutes}
           <br />
@@ -63,9 +66,13 @@ function Time() {
         </div>
         {timeLeft <= 0 ? shortPause() : ""}
         <div className="timer__nav">
-          <Setting />
-          <Play isRunning={isRunning} timerStart={toggleTimer} />
-          <Next nextTimer={nextTimer} />
+          <Setting isPause={isPause} />
+          <Play
+            isPause={isPause}
+            isRunning={isRunning}
+            timerStart={toggleTimer}
+          />
+          <Next isPause={isPause} nextTimer={nextTimer} />
         </div>
       </div>
     </>

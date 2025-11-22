@@ -17,3 +17,23 @@
 .play-btn:active {
   background-color: #f38585c0;
 }
+
+.pause-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 106px;
+  height: 85px;
+  border: none;
+  background-color: #4dda6e52;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.pause-btn:hover {
+  background-color: #033302c0;
+}
+
+.pause-btn:active {
+  background-color: #b9ebc8c0;
+}
