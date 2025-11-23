@@ -8,7 +8,7 @@ function Play({ isPause, isRunning, timerStart }) {
   return (
     <button onClick={timerStart} className={isPause ? "pause-btn" : "play-btn"}>
       {isRunning ? (
-        <img src={stopImg} />
+        <img src={isPause ? pauseImg : stopImg} />
       ) : (
         <img src={isPause ? pauseImg : playImg} alt="" />
       )}
