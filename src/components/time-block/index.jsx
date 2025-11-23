@@ -5,7 +5,7 @@ import Setting from "../setting-button";
 import Next from "../next-button";
 import Nav from "/src/components/nav/index";
 
-function Time() {
+function Time({ setIsBackground }) {
   const timerList = [5, 1800, 2100, 2400, 2700, 3000]; // массив таймеров
   const [timeLeft, setTimeLeft] = useState(timerList[0]); // первый таймер
   const [isRunning, setIsRunning] = useState(false); // стоп или плэй таймера
@@ -47,10 +47,12 @@ function Time() {
   const shortPause = () => {
     setTimeLeft(15);
     setIsPause(true);
+    setIsBackground(true);
 
     if (isPause == true) {
       setTimeLeft(timerList[currentIndex]);
       setIsPause(false);
+      setIsBackground(false);
     }
   };
 
