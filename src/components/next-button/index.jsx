@@ -5,7 +5,11 @@ import pauseImg from "./pause-icon.png";
 
 function Next({ isPause, nextTimer }) {
   return (
-    <button onClick={nextTimer} className={isPause ? "pause-btn" : "next-btn"}>
+    <button
+      disabled={isPause ? true : false}
+      onClick={nextTimer}
+      className={isPause ? "pause-btn" : "next-btn"}
+    >
       <img src={isPause ? pauseImg : nextImg} width={30} alt="" />
     </button>
   );

@@ -18,7 +18,7 @@
   background-color: #f38585c0;
 }
 
-.pause-btn {
+.pause-play {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,10 +30,10 @@
   cursor: pointer;
 }
 
-.pause-btn:hover {
+.pause-play:hover {
   background-color: #033302c0;
 }
 
-.pause-btn:active {
+.pause-play:active {
   background-color: #b9ebc8c0;
 }

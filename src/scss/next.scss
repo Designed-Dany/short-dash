@@ -27,6 +27,7 @@
   border: none;
   border-radius: 25px;
   background-color: #4dda6e52;
+  transition: background-color ease 0.5s;
   cursor: pointer;
 }
 
@@ -36,4 +37,13 @@
 
 .pause-btn:active {
   background-color: #b9ebc8c0;
+}
+
+button:disabled {
+  background-color: rgb(218, 218, 218);
+  cursor: default;
+}
+
+button:disabled:hover {
+  background-color: rgb(218, 218, 218);
 }

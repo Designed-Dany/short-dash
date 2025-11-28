@@ -7,11 +7,13 @@
   border: none;
   border-radius: 25px;
   background-color: rgba(250, 125, 125, 0.315);
+  transition: background-color ease 0.5s;
   cursor: pointer;
 }
 
 .setting-btn:hover {
   background-color: rgba(245, 87, 87, 0.664);
+  transition: background-color ease 0.5s;
 }
 
 .setting-btn:active {
@@ -27,11 +29,13 @@
   border: none;
   border-radius: 25px;
   background-color: #4dda6e;
+  transition: background-color ease 0.5s;
   cursor: pointer;
 }
 
 .pause-btn:hover {
   background-color: rgba(113, 245, 87, 0.664);
+  transition: background-color ease 0.5s;
 }
 
 .pause-btn:active {

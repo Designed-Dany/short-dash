@@ -6,7 +6,10 @@ import pauseImg from "./pause-icon.png";
 
 function Play({ isPause, isRunning, timerStart }) {
   return (
-    <button onClick={timerStart} className={isPause ? "pause-btn" : "play-btn"}>
+    <button
+      onClick={timerStart}
+      className={isPause ? "pause-play" : "play-btn"}
+    >
       {isRunning ? (
         <img src={isPause ? pauseImg : stopImg} />
       ) : (
